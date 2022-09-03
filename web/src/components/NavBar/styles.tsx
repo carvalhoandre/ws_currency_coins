@@ -6,7 +6,6 @@ interface Props {
 }
 
 export const Header = styled.header`
-  min-width: 100%;
   top: 0;
   left: 0;
   z-index: 100;
@@ -15,13 +14,18 @@ export const Header = styled.header`
 `;
 
 export const Nav = styled.nav<Props>`
-  padding: 0rem 2rem;
-  min-width: 100%;
+  padding: 0.2rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   height: ${(p) => (p.isOpen ? "3.4rem" : "0rem")};
+
+  @media screen and (min-width: 768px) {
+    height: 2rem;
+    column-gap: 1em;
+  }
+
 `;
 
 export const NavHeader = styled.div<Props>`
@@ -32,16 +36,7 @@ export const NavHeader = styled.div<Props>`
 `;
 
 export const NavMenu = styled.div<Props>`
-  @media screen and (max-width: 767px) {
-    position: fixed;
-    left: 0;
-    width: 100%;
-    background-color: var(--body-color);
-    padding: 2em 1.5em 4em;
-    /* box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15); */
-    border-radius: 1.5em 1.5em 0 0;
-    transition: 0.3s;
-  }
+ 
 `;
 
 export const List = styled.li`
@@ -49,6 +44,10 @@ export const List = styled.li`
   grid-template-columns: repeat(3, 1fr);
   gap: 2em;
   align-items: flex-end; 
+
+  @media screen and (max-width: 350px) {
+    column-gap: 0;
+  }
 `;
 
 export const ItemList = styled.ul`
@@ -59,5 +58,9 @@ export const ItemList = styled.ul`
 
   &:hover {
     color: ${primary.default};
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
   }
 `;
