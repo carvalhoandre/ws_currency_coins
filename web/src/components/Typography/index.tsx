@@ -11,8 +11,8 @@ interface IProps {
   margin?: string
   line?: string
   capitalize?: boolean
-  // eslint-disable-next-line no-unused-vars
   onClick?: (event: any) => void
+  isHover?: boolean
 }
 
 export const Typography = (props: IProps): JSX.Element => {

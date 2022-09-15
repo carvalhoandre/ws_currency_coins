@@ -1,15 +1,16 @@
-import React from 'react'
-import { BrowserRouter, Routes as AllRoutes, Route } from 'react-router-dom'
+import React from "react";
+import { BrowserRouter, Routes as Switch, Route } from "react-router-dom";
 
-
-const Home = React.lazy(async () => await import('../pages/Home'))
+import Home from '../pages/Home'
+import ListCoins from '../pages/ListCoins'
 
 export const Routes = (): JSX.Element => {
-    return (
-        <BrowserRouter>
-            <AllRoutes>
-                <Route path='/*' element={<Home />} />
-            </AllRoutes>
-        </BrowserRouter>
-    )
-}
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route path="/*" element={<Home />} />
+        <Route path="/list-coins" element={<ListCoins />} />
+      </Switch>
+    </BrowserRouter>
+  );
+};

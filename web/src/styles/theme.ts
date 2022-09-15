@@ -10,21 +10,18 @@ export const grey = {
   lightest: '#F5F6F7',
 }
 export const primary = {
-  darker: '#348888',
-  dark: '#22BABB',
-  default: '#00A48F',
-  light: '#18F1D5',
-  light2: '#9EF8EE',
-  lighter: '#E6FFF4',
+  darkest: '#3F3D56',
+  dark: '#363280',
+  default: '#5650CC',
+  light: '#6C63FF',
+  lighter: '#B4B0FF',
 }
 
 export const secondary = {
-  darker: '#F26711',
-  dark: '#F24405',
-  default: '#FA7F08',
-  light: '#FFBA43',
-  light2: '#D3FFCF',
-  lighter: '#E6FFF4',
+  dark: '#3F3D56',
+  default: '#342E70',
+  light: '#4B43A3',
+  lighter: '#B0AAF0',
 }
 
 export const alerts = {
