@@ -1,96 +1,53 @@
 import React from "react";
+import { toast } from "react-toastify";
 
-import { Typography, NavBar } from "../../components";
-import { Emphasis } from "./components/Emphasis";
+import RotateLoader from "react-spinners/RotateLoader";
+import { Footer, NavBar, Typography } from "../../components";
+import { Contact, Cover, Promotion } from "./components";
 
-import {
-  ButtonHome,
-  Container,
-  ContainerData,
-  ContainerImage,
-  ContainerText,
-  DownEmphasis,
-  Image,
-  RightEmphasis,
-  Main,
-} from "./styles";
-
-import AllSpace from "../../assets/space.svg";
-
-import { primary, grey } from "../../styles/theme";
+import { Loader, Main } from "./styles";
+import { primary } from "../../styles/theme";
 
 const Home = (): JSX.Element => {
-  return (
+  const [loading, setLoading] = React.useState(false);
+
+  const handleSubimit = (data: any) => {
+    setLoading(true);
+
+    // Do this instead
+    setTimeout(function () {
+      toast(`Obrigado ${data.name}! E-mail enviado com sucesso!`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: 0,
+      });
+    }, 5000);
+
+    setTimeout(function () {
+      setLoading(false);
+    }, 5000);
+  };
+
+  return loading ? (
+    <Loader>
+      <RotateLoader size={25} color={primary.default} loading={loading} />
+    </Loader>
+  ) : (
     <>
       <NavBar />
+
       <Main>
-        <Container>
-          <ContainerData>
-            <ContainerText>
-              <Typography
-                color={primary.default}
-                size="xxl"
-                weight={900}
-                textAlign="flex-start"
-              >
-                Descubra
-              </Typography>
-              <Typography
-                color={grey.darkest}
-                size="xxl"
-                weight={900}
-                textAlign="flex-start"
-                line="2.5rem"
-              >
-                Milhares de criptomoedas
-              </Typography>
-              <Typography
-                color={grey.dark}
-                size="sm"
-                weight={300}
-                textAlign="flex-start"
-              >
-                Explore o grande mundo das criptomoedas em nosso marketplace
-              </Typography>
-            </ContainerText>
+        <Cover />
 
-            <ButtonHome>
-              <Typography
-                color="#FFF"
-                size="bg"
-                weight={500}
-                textAlign="center"
-              >
-                Explorar
-              </Typography>
-            </ButtonHome>
-          </ContainerData>
+        <Promotion />
 
-          <ContainerImage>
-            <Image src={AllSpace} alt="Imagem_Ilustrativa" />
-          
-            <RightEmphasis>
-              <Emphasis emphasis="26K+" downText="Transações" />
+        <Contact handleSubimit={handleSubimit} />
 
-              <Emphasis emphasis="18K" downText="Atualizações" />
-
-              <Emphasis emphasis="8K" downText="Validações" />
-            </RightEmphasis>
-          </ContainerImage>
-        </Container>
-        <DownEmphasis>
-          <Emphasis
-            upText="Criptomoedas"
-            emphasis="10K"
-            downText="$871.046.86"
-          />
-
-          <Emphasis
-            upText="Movientações"
-            emphasis="2.00 ETH"
-            downText="$8046.86"
-          />
-        </DownEmphasis>
+        <Footer />
       </Main>
     </>
   );

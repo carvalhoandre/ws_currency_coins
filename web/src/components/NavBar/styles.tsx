@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { primary } from "../../styles/theme";
 
 interface Props {
   isOpen: boolean;
@@ -9,8 +8,15 @@ export const Header = styled.header`
   top: 0;
   left: 0;
   z-index: 100;
-  background-color: transparent;
-  /* box-shadow: -4px 4px 10px 1px rgb(0 0 0 / 8%); */
+  background-color: #FFF;
+  padding: 1em;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+
+  @media screen and (max-width: 800px) {
+    padding: 0.8em 0em;
+  }
 `;
 
 export const Nav = styled.nav<Props>`
@@ -21,9 +27,10 @@ export const Nav = styled.nav<Props>`
 
   height: ${(p) => (p.isOpen ? "3.4rem" : "0rem")};
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 800px) {
     height: 2rem;
     column-gap: 1em;
+    padding: 0.8em 0em;
   }
 
 `;
@@ -31,36 +38,16 @@ export const Nav = styled.nav<Props>`
 export const NavHeader = styled.div<Props>`
   display: flex;
   align-items: center;
+  gap: 1em;
 
   bottom: ${(p) => (p.isOpen ? "0rem" : "-1000rem")};
 `;
 
-export const NavMenu = styled.div<Props>`
- 
-`;
+export const NavIcon = styled.div`
+  margin-top: 0.2em;
 
-export const List = styled.li`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2em;
-  align-items: flex-end; 
-
-  @media screen and (max-width: 350px) {
-    column-gap: 0;
+  & > *:hover {
+    cursor: pointer;
   }
 `;
 
-export const ItemList = styled.ul`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-
-  &:hover {
-    color: ${primary.default};
-  }
-
-  @media screen and (max-width: 768px) {
-    width: 100%;
-  }
-`;
