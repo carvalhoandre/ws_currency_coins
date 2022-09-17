@@ -3,8 +3,6 @@ import { Container, Grid, Icons, Itens } from "./styles";
 import { Typography } from "../../../../components";
 import { GrAndroid, GrApple } from "react-icons/gr";
 
-import { grey } from "../../../../styles/theme";
-
 export const Promotion = (): JSX.Element => {
   return (
     <Container className="container">

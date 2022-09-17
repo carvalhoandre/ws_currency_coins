@@ -2,7 +2,7 @@ import React from "react";
 import { toast } from "react-toastify";
 
 import RotateLoader from "react-spinners/RotateLoader";
-import { Footer, NavBar, Typography } from "../../components";
+import { Footer, NavBar } from "../../components";
 import { Contact, Cover, Promotion } from "./components";
 
 import { Loader, Main } from "./styles";
