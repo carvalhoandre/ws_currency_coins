@@ -1,8 +1,6 @@
 import React from "react";
 
 import { Container, Input } from "./styles";
-import { GrFormSearch } from "react-icons/gr";
-import { grey } from "../../../../styles/theme";
 
 interface IProps {
   onChange: (event: string) => void;
@@ -11,7 +9,7 @@ interface IProps {
 export const Search = ({ onChange }: IProps): JSX.Element => {
   return (
     <Container>
-      <GrFormSearch size={30} color={grey.light} />
+      <i className="uil uil-search search_icon" />
       <Input
         name="search"
         type="text"

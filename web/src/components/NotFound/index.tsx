@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container, Image } from "./styles";
 
-import NotFoundImage from '../../../../assets/notFound.svg';
+import NotFoundImage from '../../assets/notFound.svg';
 
 export const NotFound = (): JSX.Element => {
   return (

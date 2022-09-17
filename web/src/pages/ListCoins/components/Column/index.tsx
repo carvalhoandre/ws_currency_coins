@@ -1,9 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Card, Column, Container, Row, TitleContainer } from "./styles";
 import { Search } from "../Search";
 
-import { grey, alerts } from "../../../../styles/theme";
+import { alerts } from "../../../../styles/theme";
 
 import { Coin } from "../../../../@types/store/Coins";
 import { Typography } from "../../../../components";
@@ -13,9 +14,10 @@ interface IProps {
 }
 
 export const CoinColumn = ({ coins }: IProps) => {
-  const [search, setSearch] = React.useState("");
+  const navigate = useNavigate();
 
-  console.log(search);
+  const [search, setSearch] = React.useState("");
+  
   const filteredCoins =
     search.length > 0
       ? coins.filter(
@@ -27,13 +29,17 @@ export const CoinColumn = ({ coins }: IProps) => {
 
   let useCoins = filteredCoins.length > 0 ? filteredCoins : coins;
 
+  const goDetails = (id: string):void => {
+    navigate(`/details-coins/&${id}`)
+  }
+
   return (
     <Container>
       <TitleContainer>
-        <Typography color={grey.darkest} weight={600} size="xl">
+        <Typography weight={600} size="xl">
           Criptomoedas
         </Typography>
-        <Typography color={grey.light} weight={300} size="md">
+        <Typography weight={300} size="md">
           Acompanhe o mercado
         </Typography>
       </TitleContainer>
@@ -47,19 +53,19 @@ export const CoinColumn = ({ coins }: IProps) => {
             .replace(/\d(?=(\d{3})+\.)/g, "$&,");
 
           return (
-            <Card key={coin.id}>
+            <Card key={coin.id} onClick={() => goDetails(coin.rank)}>
               <Row>
-                <Typography color={grey.darkest} weight={600} size="bg">
+                <Typography weight={600} size="bg">
                   {coin.name}
                 </Typography>
 
-                <Typography color={grey.darkest} weight={800} size="bg">
+                <Typography weight={800} size="bg">
                   #{coin.rank}
                 </Typography>
               </Row>
 
               <Row>
-                <Typography color={grey.default} weight={300} size="md">
+                <Typography weight={300} size="md">
                   {coin.symbol}
                 </Typography>
                 <Typography

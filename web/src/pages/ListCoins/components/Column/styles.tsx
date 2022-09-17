@@ -40,12 +40,18 @@ export const Card = styled.div`
   padding: 1rem;
   gap: 2rem;
   width: 50%;
-  height: 100%;
   border: ${grey.lightest} 0.1rem solid;
   margin: auto;
+  background-color: hsl(var(--hue-color), 29%, 16%);
 
   @media screen and (max-width: 767px) {
     width: 80%;
+  }
+
+  &:hover {
+    cursor: pointer;
+    width: 51%;
+    height: 102%;
   }
 `;
 

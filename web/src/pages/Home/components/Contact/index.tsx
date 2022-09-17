@@ -1,15 +1,12 @@
 import React from "react";
 
 import "../../../../styles/styles.css";
-import { grey } from "../../../../styles/theme";
 
 import { ErrorMessage, Formik, Form, Field } from "formik";
 import * as yup from "yup";
 
 import { ButtonHome } from "../Cover/styles";
 import { Typography } from "../../../../components";
-
-import { GrMailOption, GrMap } from "react-icons/gr";
 
 interface IProps {
   handleSubimit: (data?: any) => void;
@@ -24,7 +21,7 @@ export const Contact = ({ handleSubimit }: IProps) => {
   return (
     <section className="contact section" id="contactme">
       <Typography
-        color={grey.darkest}
+        color="#FFF"
         size="xl"
         textAlign="center"
         weight={600}
@@ -33,19 +30,19 @@ export const Contact = ({ handleSubimit }: IProps) => {
         Email Service
       </Typography>
       <Typography
-        color={grey.default}
+        color="#FFF"
         size="md"
         textAlign="center"
         weight={300}
         margin="0 0 3rem 0"
       >
-        Cadastre-se seja atualizado sobre nossa DECOLAGEM
+        Cadastre-se seja atualizado sobre nosso LANÇAMENTO
       </Typography>
 
       <div className="contact_container container grid">
         <div>
           <div className="contact_information">
-            <GrMailOption size={30} />
+          <i className="uil uil-envelope contact_icon" />
             <div>
               <h3 className="contact_title">Email</h3>
               <span className="contact_subtitle">
@@ -62,7 +59,8 @@ export const Contact = ({ handleSubimit }: IProps) => {
           </div>
 
           <div className="contact_information">
-            <GrMap size={30} />
+          <i className="uil uil-map-marker contact_icon" />
+
             <div>
               <h3 className="contact_title">Localização</h3>
               <span className="contact_subtitle">Brasil - São Paulo</span>

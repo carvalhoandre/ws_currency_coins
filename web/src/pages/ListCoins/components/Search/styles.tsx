@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { grey } from "../../../../styles/theme";
 
-
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -20,5 +19,5 @@ export const Container = styled.div`
 export const Input = styled.input`
   width: 100%;
   border: none;
-
+  background-color: hsl(var(--hue-color), 28%, 12%);
 `;

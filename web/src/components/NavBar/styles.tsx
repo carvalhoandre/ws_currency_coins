@@ -4,13 +4,13 @@ interface Props {
   isOpen: boolean;
 }
 
-export const Header = styled.header`
+export const Header = styled.header<Props>`
   top: 0;
   left: 0;
   z-index: 100;
-  background-color: #FFF;
+  background-color: hsl(var(--hue-color), 29%, 16%);
   padding: 1em;
-  position: fixed;
+  position: ${(p) => (p.isOpen ? "fixed" : "relative")};
   width: 100%;
   z-index: 1000;
 
@@ -33,6 +33,9 @@ export const Nav = styled.nav<Props>`
     padding: 0.8em 0em;
   }
 
+  @media screen and (max-width: 720px) {
+    padding: 0.8em 3em;
+  }
 `;
 
 export const NavHeader = styled.div<Props>`
@@ -43,11 +46,16 @@ export const NavHeader = styled.div<Props>`
   bottom: ${(p) => (p.isOpen ? "0rem" : "-1000rem")};
 `;
 
-export const NavIcon = styled.div`
-  margin-top: 0.2em;
+export const Logo = styled.img`
+  max-width: 200px;
+  max-height: 200px;
 
   & > *:hover {
     cursor: pointer;
   }
-`;
 
+  @media screen and (max-width: 720px) {
+    width: 40px;
+    height: 25px;
+  }
+`;

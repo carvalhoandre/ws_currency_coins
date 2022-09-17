@@ -1,2 +1,2 @@
 export * from './Column'
-export * from './NotFound'
+export * from '../../../components/NotFound'

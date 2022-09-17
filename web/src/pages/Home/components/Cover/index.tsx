@@ -9,38 +9,28 @@ import {
   ContainerData,
   ContainerImage,
   ContainerText,
-  DownEmphasis,
   Image,
   Info,
-  RightEmphasis,
 } from "./styles";
 
 import AllSpace from "../../../../assets/space.svg";
-
-import { grey, primary } from "../../../../styles/theme";
-import { Emphasis } from "../Emphasis";
 
 export const Cover = (): JSX.Element => {
   const navigate = useNavigate();
 
   return (
     <Body>
-        <Info> 
-        <Typography
-              color="#FFF"
-              size="bg"
-              weight={900}
-              textAlign="center"
-            >
-              Decolaremos 12/12/2022
-            </Typography>
-        </Info>
+      <Info>
+        <Typography color="#FFF" size="bg" weight={900} textAlign="center">
+          Lançamento 12/12/2022
+        </Typography>
+      </Info>
+
       <Container>
-        
         <ContainerData>
           <ContainerText>
             <Typography
-              color={primary.default}
+              color="#FFF"
               size="xxl"
               weight={900}
               textAlign="flex-start"
@@ -48,7 +38,7 @@ export const Cover = (): JSX.Element => {
               Descubra
             </Typography>
             <Typography
-              color={grey.darkest}
+              color="#FFF"
               size="xxl"
               weight={900}
               textAlign="flex-start"
@@ -57,7 +47,7 @@ export const Cover = (): JSX.Element => {
               Milhares de criptomoedas
             </Typography>
             <Typography
-              color={grey.dark}
+             color="#FFF"
               size="sm"
               weight={300}
               textAlign="flex-start"
@@ -76,16 +66,16 @@ export const Cover = (): JSX.Element => {
         <ContainerImage>
           <Image src={AllSpace} alt="Imagem_Ilustrativa" />
 
-          <RightEmphasis>
+          {/* <RightEmphasis>
             <Emphasis emphasis="26K+" downText="Transações" />
 
             <Emphasis emphasis="18K" downText="Atualizações" />
 
             <Emphasis emphasis="8K" downText="Validações" />
-          </RightEmphasis>
+          </RightEmphasis> */}
         </ContainerImage>
       </Container>
-      <DownEmphasis>
+      {/* <DownEmphasis>
         <Emphasis upText="Criptomoedas" emphasis="10K" downText="$871.046.86" />
 
         <Emphasis
@@ -93,7 +83,7 @@ export const Cover = (): JSX.Element => {
           emphasis="2.00 ETH"
           downText="$8046.86"
         />
-      </DownEmphasis>
+      </DownEmphasis> */}
     </Body>
   );
 };

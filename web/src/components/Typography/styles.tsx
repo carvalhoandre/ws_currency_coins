@@ -39,7 +39,7 @@ export const StyledTypography = styled.p<Props>`
 
   font-family: 'Inter', sans-serif;
   font-size: ${handleFontSize};
-  color: ${(p) => (p.color ? p.color : grey.dark)};
+  color: ${(p) => (p.color ? p.color : "#FFF")};
   line-height: ${(p) => (p.line ? p.line : "24px")};
   font-weight: ${(p) => p.weight};
   margin: ${(p) => p.margin || "auto 0"};

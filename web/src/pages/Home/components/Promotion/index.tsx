@@ -7,9 +7,9 @@ import { grey } from "../../../../styles/theme";
 
 export const Promotion = (): JSX.Element => {
   return (
-    <Container>
+    <Container className="container">
       <Typography
-        color={grey.darkest}
+        color="#FFF"
         size="xl"
         textAlign="center"
         weight={600}
@@ -18,7 +18,7 @@ export const Promotion = (): JSX.Element => {
         Acompanhe de perto
       </Typography>
       <Typography
-        color={grey.default}
+        color="#FFF"
         size="md"
         textAlign="center"
         weight={300}
@@ -33,7 +33,7 @@ export const Promotion = (): JSX.Element => {
             <GrApple size={30} />
           </Icons>
 
-          <Typography>Baixe nossos App's</Typography>
+          <Typography color="#FFF">Baixe nossos App's</Typography>
         </Itens>
       </Grid>
     </Container>
