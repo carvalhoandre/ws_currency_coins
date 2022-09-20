@@ -5,7 +5,7 @@ import { GrAndroid, GrApple } from "react-icons/gr";
 
 export const Promotion = (): JSX.Element => {
   return (
-    <Container className="container">
+    <Container >
       <Typography
         color="#FFF"
         size="xl"

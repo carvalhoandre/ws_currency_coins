@@ -8,10 +8,14 @@ type IProps = {
   coin: Coin;
 };
 
-const formatter = (val: string) => {
-  return parseInt(val)
+const formatter = (val: string): number => {
+  if (val === null) return 0;
+
+  const value = parseInt(val)
     .toFixed(2)
-    .replace(/\d(?=(\d{3})+\.)/g, "$&,") || 0
+    .replace(/\d(?=(\d{3})+\.)/g, "$&,");
+
+  return parseInt(value);
 };
 
 export const LineChart = ({ coin }: IProps): JSX.Element => {
@@ -21,30 +25,30 @@ export const LineChart = ({ coin }: IProps): JSX.Element => {
         name: "$",
         data: [
           {
-            x: "Valor",
+            x: "Oferta",
             y: formatter(coin.supply),
           },
           {
-            x: "Valor máximo",
+            x: "Oferta máximo",
             y: formatter(coin.maxSupply),
           },
           {
-            x: "Valor de mercado USD",
+            x: "Capitalização Bolsista",
             y: formatter(coin.marketCapUsd),
           },
           {
-            x: "Valor Usd 24Hr",
+            x: "Variação 24Hr",
             y: formatter(coin.volumeUsd24Hr),
           },
           {
-            x: "Porcentagem 24H",
+            x: "Variação Percentual 24H",
             y: formatter(coin.changePercent24Hr),
           },
         ],
       },
     ],
     options: {
-      colors: ["#FFF", "transparent"],
+      colors: "#000",
       chart: {
         height: 350,
         type: "bar",
@@ -64,11 +68,8 @@ export const LineChart = ({ coin }: IProps): JSX.Element => {
             style: {
               fontSize: "12px",
               fontWeight: 700,
+              fontColor: "#000",
             },
-            groups: [
-              { title: "2019", cols: 4 },
-              { title: "2020", cols: 4 },
-            ],
           },
         },
       },

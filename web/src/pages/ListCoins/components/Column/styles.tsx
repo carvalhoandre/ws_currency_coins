@@ -50,8 +50,6 @@ export const Card = styled.div`
 
   &:hover {
     cursor: pointer;
-    width: 51%;
-    height: 102%;
   }
 `;
 

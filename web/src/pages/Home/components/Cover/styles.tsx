@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { primary } from "../../../../styles/theme";
 
 export const Body = styled.section`
-  margin-top: 3.8em;
   display: flex;
   flex-direction: column;
   gap: 2em;
@@ -17,7 +16,7 @@ export const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 3em;
+  margin-top: 6em;
   gap: 8em;
 
   @media screen and (min-width: 768px) {

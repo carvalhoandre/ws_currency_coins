@@ -22,7 +22,7 @@ export const Cover = (): JSX.Element => {
     <Body>
       <Info>
         <Typography color="#FFF" size="bg" weight={900} textAlign="center">
-          Lançamento 12/12/2022
+          Lançamento 12/11/2022
         </Typography>
       </Info>
 

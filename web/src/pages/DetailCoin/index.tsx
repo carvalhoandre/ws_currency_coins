@@ -10,18 +10,25 @@ import { Coin } from "../../@types/store/Coins";
 import { LineChart } from "./components/LineChart";
 
 const DetailCoin = (): JSX.Element => {
-  const { coins } = useCoins();
+  const { coins, fechCoins } = useCoins();
 
   const [coin, setCoin] = React.useState<Coin>();
 
-  React.useEffect(() => {
+  const fechAllCoins = async () => {
     const id = window.location.pathname.split("&")[1];
+    
+    if (coins.length < 1) await fechCoins();
+    console.log(coins)
 
     const coinSelected: Coin | undefined = coins.find((coin) =>
       coin.rank.includes(id)
     );
-
+    
     coinSelected && setCoin(coinSelected);
+  };
+
+  React.useEffect(() => {
+    fechAllCoins();
   }, []);
 
   return (
