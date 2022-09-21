@@ -4,7 +4,7 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 import "react-loading-skeleton/dist/skeleton.css";
 
-import { borderRadius, primary } from "../../styles/theme";
+import { borderRadius } from "../../styles/theme";
 
 import { StyledSkeleton } from "./styles";
 
