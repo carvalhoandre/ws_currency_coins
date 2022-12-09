@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { fontSize, grey, primary } from "../../styles/theme";
+import theme, { fontSize, grey, primary } from "../../styles/theme";
 
 interface Props {
   size?: "xs" | "sm" | "md" | "bg" | "lg" | "xl" | "xxl";
@@ -39,7 +39,7 @@ export const StyledTypography = styled.p<Props>`
 
   font-family: 'Inter', sans-serif;
   font-size: ${handleFontSize};
-  color: ${(p) => (p.color ? p.color : "#FFF")};
+  color: ${(p) => (p.color ? p.color : grey.darkest)};
   line-height: ${(p) => (p.line ? p.line : "24px")};
   font-weight: ${(p) => p.weight};
   margin: ${(p) => p.margin || "auto 0"};

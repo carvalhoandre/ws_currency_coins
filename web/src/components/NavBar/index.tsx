@@ -29,7 +29,7 @@ export const NavBar = ({ goRote }: IProps): JSX.Element => {
 
           <Styles.Logo src={Image} />
 
-          <Typography color="#FFF" size="xl" weight={600}>
+          <Typography size="xl" weight={600}>
             the power of coins
           </Typography>
         </Styles.NavHeader>

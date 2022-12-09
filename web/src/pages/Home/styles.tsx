@@ -9,15 +9,3 @@ export const Main = styled.section`
     gap: 2.5em;
   }
 `;
-
-export const Loader = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-
-  & > * {
-    margin: auto;
-  }
-`;
