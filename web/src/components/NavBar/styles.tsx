@@ -64,9 +64,4 @@ export const Logo = styled.img`
   & > *:hover {
     cursor: pointer;
   }
-
-  @media screen and (max-width: 720px) {
-    width: 40px;
-    height: 25px;
-  }
 `;

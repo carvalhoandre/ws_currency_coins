@@ -8,6 +8,7 @@ export const Body = styled.section`
 
   @media screen and (max-width: 768px) {
     margin-top: 0.2em;
+    margin-bottom: 3em;
   }
 `;
 
