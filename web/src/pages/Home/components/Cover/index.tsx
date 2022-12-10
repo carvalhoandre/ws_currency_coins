@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import { Typography } from "../../../../components";
+import { Emphasis } from "../Emphasis";
 
 import {
   Body,
@@ -16,39 +17,31 @@ import {
 } from "./styles";
 
 import AllSpace from "../../../../assets/space.svg";
-
-import { grey, primary } from "../../../../styles/theme";
-import { Emphasis } from "../Emphasis";
+import { grey } from "../../../../styles/theme";
 
 export const Cover = (): JSX.Element => {
   const navigate = useNavigate();
 
   return (
     <Body>
-        <Info> 
+      <Info>
         <Typography
-              color="#FFF"
-              size="bg"
-              weight={900}
-              textAlign="center"
-            >
-              Decolaremos 12/12/2022
-            </Typography>
-        </Info>
+          size="bg"
+          weight={900}
+          textAlign="center"
+          color={grey.lightest}
+        >
+          Em breve iremos decolar
+        </Typography>
+      </Info>
+
       <Container>
-        
         <ContainerData>
           <ContainerText>
-            <Typography
-              color={primary.default}
-              size="xxl"
-              weight={900}
-              textAlign="flex-start"
-            >
+            <Typography size="xxl" weight={900} textAlign="flex-start">
               Descubra
             </Typography>
             <Typography
-              color={grey.darkest}
               size="xxl"
               weight={900}
               textAlign="flex-start"
@@ -56,18 +49,19 @@ export const Cover = (): JSX.Element => {
             >
               Milhares de criptomoedas
             </Typography>
-            <Typography
-              color={grey.dark}
-              size="sm"
-              weight={300}
-              textAlign="flex-start"
-            >
+            <Typography size="sm" weight={300} textAlign="flex-start">
               Explore o grande mundo das criptomoedas em nosso marketplace
             </Typography>
           </ContainerText>
 
           <ButtonHome onClick={() => navigate(`/list-coins`)}>
-            <Typography color="#FFF" size="bg" weight={500} textAlign="center">
+            <Typography
+              size="bg"
+              weight={500}
+              textAlign="center"
+              color={grey.lightest}
+              isHover
+            >
               Explorar
             </Typography>
           </ButtonHome>

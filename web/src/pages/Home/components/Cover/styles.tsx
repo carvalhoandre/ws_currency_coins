@@ -2,13 +2,13 @@ import styled from "styled-components";
 import { primary } from "../../../../styles/theme";
 
 export const Body = styled.section`
-  margin-top: 3.8em;
   display: flex;
   flex-direction: column;
   gap: 2em;
 
   @media screen and (max-width: 768px) {
-    margin-top: 5.2em;
+    margin-top: 0.2em;
+    margin-bottom: 3em;
   }
 `;
 
@@ -17,6 +17,7 @@ export const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2em;
   gap: 8em;
 
   @media screen and (min-width: 768px) {
@@ -26,6 +27,7 @@ export const Container = styled.section`
 
   @media screen and (max-width: 768px) {
     gap: 4em;
+    margin-top: 1em;
   }
 `;
 
@@ -98,4 +100,5 @@ export const Info = styled.div`
   width: 100%;
   background-color: ${primary.default};
   padding: 0.5em 1em;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 `;

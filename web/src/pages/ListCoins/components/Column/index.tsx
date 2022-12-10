@@ -1,9 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Card, Column, Container, Row, TitleContainer } from "./styles";
 import { Search } from "../Search";
 
-import { grey, alerts } from "../../../../styles/theme";
+import { alerts } from "../../../../styles/theme";
 
 import { Coin } from "../../../../@types/store/Coins";
 import { Typography } from "../../../../components";
@@ -13,9 +14,10 @@ interface IProps {
 }
 
 export const CoinColumn = ({ coins }: IProps) => {
+  const navigate = useNavigate();
+
   const [search, setSearch] = React.useState("");
 
-  console.log(search);
   const filteredCoins =
     search.length > 0
       ? coins.filter(
@@ -27,13 +29,30 @@ export const CoinColumn = ({ coins }: IProps) => {
 
   let useCoins = filteredCoins.length > 0 ? filteredCoins : coins;
 
+  const goDetails = (id: string): void => {
+    navigate(`/details-coins/&${id}`);
+  };
+
+  const formatRank = (rank: string) => {
+    switch (rank.length) {
+      case 1:
+        return `00${rank}`;
+
+      case 2:
+        return `0${rank}`;
+
+      default:
+        return rank;
+    }
+  };
+
   return (
     <Container>
       <TitleContainer>
-        <Typography color={grey.darkest} weight={600} size="xl">
+        <Typography weight={600} size="xl">
           Criptomoedas
         </Typography>
-        <Typography color={grey.light} weight={300} size="md">
+        <Typography weight={300} size="md">
           Acompanhe o mercado
         </Typography>
       </TitleContainer>
@@ -41,26 +60,26 @@ export const CoinColumn = ({ coins }: IProps) => {
       <Search onChange={setSearch} />
 
       <Column>
-        {useCoins.map((coin: Coin) => {
-          let price: string = parseInt(coin.priceUsd)
+        {useCoins.map(({ priceUsd, name, rank, symbol, id }: Coin) => {
+          let price: string = parseInt(priceUsd)
             .toFixed(2)
             .replace(/\d(?=(\d{3})+\.)/g, "$&,");
 
           return (
-            <Card key={coin.id}>
+            <Card key={id} onClick={() => goDetails(rank)}>
               <Row>
-                <Typography color={grey.darkest} weight={600} size="bg">
-                  {coin.name}
+                <Typography weight={600} size="bg">
+                  {name}
                 </Typography>
 
-                <Typography color={grey.darkest} weight={800} size="bg">
-                  #{coin.rank}
+                <Typography weight={800} size="bg">
+                  {`# ${formatRank(rank)}`}
                 </Typography>
               </Row>
 
               <Row>
-                <Typography color={grey.default} weight={300} size="md">
-                  {coin.symbol}
+                <Typography weight={300} size="md">
+                  {symbol}
                 </Typography>
                 <Typography
                   color={
@@ -71,7 +90,7 @@ export const CoinColumn = ({ coins }: IProps) => {
                   weight={500}
                   size="md"
                 >
-                  $ {price}
+                  ${price}
                 </Typography>
               </Row>
             </Card>

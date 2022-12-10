@@ -8,10 +8,7 @@ export const Container = styled.div`
   align-items: center;
   margin-top: 3em;
 
-  @media screen and (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-  }
+
 `;
 
 export const Image = styled.img`

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { grey } from "../../../../styles/theme";
 
-
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -13,12 +12,13 @@ export const Container = styled.div`
   width: 30%;
 
   @media screen and (max-width: 767px) {
-    width: 90%;
+    width: 80%;
   }
 `;
 
 export const Input = styled.input`
+  color: ${grey.dark};
   width: 100%;
   border: none;
-
+  background-color: hsl(var(--hue-color), 28%, 12%);
 `;

@@ -14,7 +14,7 @@ export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: 2em;
+  margin: 2em 0em;
   gap: 0.3em;
 
   @media screen and (max-width: 767px) {
@@ -40,12 +40,16 @@ export const Card = styled.div`
   padding: 1rem;
   gap: 2rem;
   width: 50%;
-  height: 100%;
   border: ${grey.lightest} 0.1rem solid;
   margin: auto;
+  background-color: hsl(var(--hue-color), 29%, 16%);
 
   @media screen and (max-width: 767px) {
     width: 80%;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 `;
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { fontSize, grey, primary } from "../../styles/theme";
+import { fontSize, grey } from "../../styles/theme";
 
 interface Props {
   size?: "xs" | "sm" | "md" | "bg" | "lg" | "xl" | "xxl";
@@ -9,7 +9,7 @@ interface Props {
   margin?: string;
   line?: string;
   capitalize?: boolean;
-  isHover?:boolean;
+  isHover?: boolean;
 }
 
 const handleFontSize = (props: Props): string => {
@@ -36,19 +36,14 @@ const handleFontSize = (props: Props): string => {
 export const StyledTypography = styled.p<Props>`
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: ${handleFontSize};
-  color: ${(p) => (p.color ? p.color : grey.dark)};
+  color: ${(p) => (p.color ? p.color : grey.darkest)};
   line-height: ${(p) => (p.line ? p.line : "24px")};
   font-weight: ${(p) => p.weight};
   margin: ${(p) => p.margin || "auto 0"};
   text-align: ${(p) => p.textAlign || "center"};
   text-transform: ${(p) => (p.capitalize ? "capitalize" : "")};
-
-  &:hover {
-    color: ${(p) => (p.isHover ? primary.dark : p.color || grey.dark)};
-  }
 
   & u {
     border-bottom: 2px solid ${(p) => (p.color ? p.color : grey.dark)};

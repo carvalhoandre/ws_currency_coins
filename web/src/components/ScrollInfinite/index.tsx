@@ -15,10 +15,7 @@ export const ScrollInfinite = (props: IProps): JSX.Element => {
     <StyledInfiniteScroll {...props}>
       <InfiniteScroll
         dataLength={100}
-        next={() => {
-          props.next()
-          console.log("CHAMOU")
-        }}
+        next={() => props.next()}
         inverse={false}
         hasMore={true}
         loader={<></>}
