@@ -1,5 +1,5 @@
 import { NavBar } from "../../components";
-import {  Cover } from "./components";
+import { Cover } from "./components";
 
 import { Main } from "./styles";
 

@@ -1,10 +1,7 @@
-import React from "react";
-
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-
 import "react-loading-skeleton/dist/skeleton.css";
 
-import { borderRadius } from "../../styles/theme";
+import { borderRadius, grey } from "../../styles/theme";
 
 import { StyledSkeleton } from "./styles";
 
@@ -22,9 +19,9 @@ export const LoadingSkeleton = (props: IProps): JSX.Element => {
   return (
     <StyledSkeleton>
       <SkeletonTheme
-        baseColor={props.baseColor ? props.baseColor : 'hsl(var(--hue-color), 28%, 12%)'}
+        baseColor={props.baseColor ? props.baseColor : grey.lightest}
         highlightColor={
-          props.highlightColor ? props.highlightColor : 'hsl(var(--hue-color), 29%, 16%)'
+          props.highlightColor ? props.highlightColor : grey.lightest
         }
         borderRadius={props.borderRadius ? props.borderRadius : borderRadius.lg}
         width={props.width ? props.width : "328px"}
