@@ -14,7 +14,7 @@ export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: 2em;
+  margin: 2em 0em;
   gap: 0.3em;
 
   @media screen and (max-width: 767px) {

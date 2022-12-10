@@ -18,7 +18,6 @@ const DetailCoin = (): JSX.Element => {
     const id = window.location.pathname.split("&")[1];
     
     if (coins.length < 1) await fechCoins();
-    console.log(coins)
 
     const coinSelected: Coin | undefined = coins.find((coin) =>
       coin.rank.includes(id)
