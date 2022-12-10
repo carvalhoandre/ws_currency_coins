@@ -25,8 +25,13 @@ export const Cover = (): JSX.Element => {
   return (
     <Body>
       <Info>
-        <Typography size="bg" weight={900} textAlign="center">
-          Lançamento 12/11/2022
+        <Typography
+          size="bg"
+          weight={900}
+          textAlign="center"
+          color={grey.lightest}
+        >
+          Em breve iremos decolar
         </Typography>
       </Info>
 
@@ -55,6 +60,7 @@ export const Cover = (): JSX.Element => {
               weight={500}
               textAlign="center"
               color={grey.lightest}
+              isHover
             >
               Explorar
             </Typography>

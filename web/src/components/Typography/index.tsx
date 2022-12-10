@@ -15,6 +15,6 @@ interface IProps {
   isHover?: boolean
 }
 
-export const Typography = (props: IProps): JSX.Element => {
-  return <StyledTypography {...props}>{props.children}</StyledTypography>
+export const Typography = (props: IProps, isHover = false): JSX.Element => {
+  return <StyledTypography isHover={isHover} {...props}>{props.children}</StyledTypography>
 }

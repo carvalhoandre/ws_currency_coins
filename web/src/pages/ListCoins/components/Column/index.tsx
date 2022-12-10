@@ -17,7 +17,7 @@ export const CoinColumn = ({ coins }: IProps) => {
   const navigate = useNavigate();
 
   const [search, setSearch] = React.useState("");
-  
+
   const filteredCoins =
     search.length > 0
       ? coins.filter(
@@ -29,9 +29,22 @@ export const CoinColumn = ({ coins }: IProps) => {
 
   let useCoins = filteredCoins.length > 0 ? filteredCoins : coins;
 
-  const goDetails = (id: string):void => {
-    navigate(`/details-coins/&${id}`)
-  }
+  const goDetails = (id: string): void => {
+    navigate(`/details-coins/&${id}`);
+  };
+
+  const formatRank = (rank: string) => {
+    switch (rank.length) {
+      case 1:
+        return `00${rank}`;
+
+      case 2:
+        return `0${rank}`;
+
+      default:
+        return rank;
+    }
+  };
 
   return (
     <Container>
@@ -47,26 +60,26 @@ export const CoinColumn = ({ coins }: IProps) => {
       <Search onChange={setSearch} />
 
       <Column>
-        {useCoins.map((coin: Coin) => {
-          let price: string = parseInt(coin.priceUsd)
+        {useCoins.map(({ priceUsd, name, rank, symbol, id }: Coin) => {
+          let price: string = parseInt(priceUsd)
             .toFixed(2)
             .replace(/\d(?=(\d{3})+\.)/g, "$&,");
 
           return (
-            <Card key={coin.id} onClick={() => goDetails(coin.rank)}>
+            <Card key={id} onClick={() => goDetails(rank)}>
               <Row>
                 <Typography weight={600} size="bg">
-                  {coin.name}
+                  {name}
                 </Typography>
 
                 <Typography weight={800} size="bg">
-                  #{coin.rank}
+                  {`# ${formatRank(rank)}`}
                 </Typography>
               </Row>
 
               <Row>
                 <Typography weight={300} size="md">
-                  {coin.symbol}
+                  {symbol}
                 </Typography>
                 <Typography
                   color={
@@ -77,7 +90,7 @@ export const CoinColumn = ({ coins }: IProps) => {
                   weight={500}
                   size="md"
                 >
-                  $ {price}
+                  ${price}
                 </Typography>
               </Row>
             </Card>

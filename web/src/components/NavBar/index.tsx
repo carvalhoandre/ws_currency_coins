@@ -1,11 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Typography } from "../Typography";
 
-import * as Styles from "./styles";
+import Image from "../../assets/logoBlack.svg";
 
-import { useNavigate } from "react-router-dom";
-import Image from "../../assets/logo.png";
+import * as Styles from "./styles";
 
 interface IProps {
   goRote?: string;
@@ -20,17 +20,17 @@ export const NavBar = ({ goRote }: IProps): JSX.Element => {
     <Styles.Header isOpen={goRote ? true : false}>
       <Styles.Nav isOpen={nav}>
         <Styles.NavHeader isOpen={nav}>
-          {goRote && (
+          {goRote ? (
             <i
               className="uil uil-angle-left nav_icon"
               onClick={() => navigate(`/${goRote}`)}
             />
+          ) : (
+            <Styles.Logo src={Image} />
           )}
 
-          <Styles.Logo src={Image} />
-
-          <Typography size="xl" weight={600}>
-            the power of coins
+          <Typography size="xl" weight={600} textAlign="center">
+            AC Coins
           </Typography>
         </Styles.NavHeader>
       </Styles.Nav>

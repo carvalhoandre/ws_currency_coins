@@ -17,7 +17,7 @@ export const Container = styled.div`
 `;
 
 export const Input = styled.input`
-  color: #FFF;
+  color: ${grey.dark};
   width: 100%;
   border: none;
   background-color: hsl(var(--hue-color), 28%, 12%);

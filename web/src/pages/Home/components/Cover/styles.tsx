@@ -16,7 +16,7 @@ export const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 6em;
+  margin-top: 2em;
   gap: 8em;
 
   @media screen and (min-width: 768px) {
